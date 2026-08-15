@@ -524,13 +524,13 @@ export const tracks: Track[] = [
     album: "Sharaabi",
   },
   {
-    youtubeId: "wphJ60DpsvA",
+    youtubeId: "MOig_8BRdzM",
     title: "Bade Achhe Lagte Hain",
     artist: "Amit Kumar",
     album: "Balika Badhu",
   },
   {
-    youtubeId: "m70PxEH2pq8",
+    youtubeId: "mViTx-YDcV8",
     title: "Koi Humdum Na Raha",
     artist: "Kishore Kumar",
     album: "Jhumroo",
@@ -542,7 +542,7 @@ export const tracks: Track[] = [
     album: "Mr. X in Bombay",
   },
   {
-    youtubeId: "Oj1ISHg2XvE",
+    youtubeId: "m7W8WoCRFwo",
     title: "Phir Wohi Raat Hai",
     artist: "Kishore Kumar",
     album: "Ghar",
