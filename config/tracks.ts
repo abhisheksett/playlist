@@ -511,4 +511,40 @@ export const tracks: Track[] = [
     artist: "Rahat Fateh Ali Khan",
     album: "Virsa",
   },
+  {
+    youtubeId: "YeOLDYet0rM",
+    title: "Kisi Baat Par Main Kisi Se Khafa Hoon",
+    artist: "Kishore Kumar",
+    album: "Bemisal",
+  },
+  {
+    youtubeId: "upiFi3ZkfOM",
+    title: "Manzilein Apni Jagah Hai",
+    artist: "Kishore Kumar",
+    album: "Sharaabi",
+  },
+  {
+    youtubeId: "wphJ60DpsvA",
+    title: "Bade Achhe Lagte Hain",
+    artist: "Amit Kumar",
+    album: "Balika Badhu",
+  },
+  {
+    youtubeId: "m70PxEH2pq8",
+    title: "Koi Humdum Na Raha",
+    artist: "Kishore Kumar",
+    album: "Jhumroo",
+  },
+  {
+    youtubeId: "FAoSMKq5Oqo",
+    title: "Mere Mehboob Qayamat Hogi",
+    artist: "Kishore Kumar",
+    album: "Mr. X in Bombay",
+  },
+  {
+    youtubeId: "Oj1ISHg2XvE",
+    title: "Phir Wohi Raat Hai",
+    artist: "Kishore Kumar",
+    album: "Ghar",
+  },
 ];
