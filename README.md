@@ -1,36 +1,13 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![Old Monk](public/hero.png)
 
-## Getting Started
+Imagine you and your close friends meeting after a long while, over Old Monk. It's drizzling outside, cozy inside the room. Someone's cracked open the bottle, someone's still figuring out the mixer-to-rum ratio, and nobody's in a hurry to go anywhere.
 
-First, run the development server:
+The conversation drifts the way it always does — who's doing what now, who still owes whom money from a trip nobody quite remembers properly, the usual roasting that never gets old. Somewhere between the second peg and the third, someone reaches for the aux, and it has to be *those* songs. Not the new ones. The ones that were playing in the background of every hostel room, every terrace, every long train ride back then.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The happy ones. The heartbreak ones. Back to back, no skipping, no arguing about what's next — because you already know every line, and so does everyone else in the room.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+That's this playlist. Old is gold, on repeat, for exactly this kind of night.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Pour one, and hit play.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**[oldmonk.vercel.app](https://oldmonk.vercel.app)**
