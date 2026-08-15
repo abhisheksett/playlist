@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { CheersIcon, RainIcon } from "@/components/icons";
+import { CheersIcon, LinkedInIcon, RainIcon } from "@/components/icons";
 
 function Clock() {
   const [time, setTime] = useState<string | null>(null);
@@ -172,6 +172,21 @@ function CheersButton() {
   );
 }
 
+function LinkedInButton() {
+  return (
+    <a
+      href="https://www.linkedin.com/in/abhisheksett"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Connect on LinkedIn"
+      title="Connect on LinkedIn"
+      className="pointer-events-auto inline-flex items-center justify-center rounded-full border border-white/10 bg-black/30 p-2.5 text-white/80 shadow-lg backdrop-blur-xl transition hover:bg-white/10 hover:text-white"
+    >
+      <LinkedInIcon />
+    </a>
+  );
+}
+
 export function Header() {
   return (
     <div className="pointer-events-none fixed inset-x-0 top-0 z-20">
@@ -184,6 +199,9 @@ export function Header() {
       <div className="fixed right-5 top-5 flex items-center gap-2 sm:right-8 sm:top-7">
         <AmbientButton />
         <CheersButton />
+      </div>
+      <div className="fixed bottom-5 right-5 sm:bottom-7 sm:right-8">
+        <LinkedInButton />
       </div>
     </div>
   );

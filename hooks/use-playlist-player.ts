@@ -12,13 +12,19 @@ const PLAYER_VARS: YT.PlayerVars = {
   modestbranding: 1,
 };
 
-function shuffledOrder(length: number, keepFirst: number) {
-  const rest = Array.from({ length }, (_, i) => i).filter((i) => i !== keepFirst);
-  for (let i = rest.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [rest[i], rest[j]] = [rest[j], rest[i]];
+// Picks a track index that hasn't played yet this "cycle" (session-tracked via
+// `playedSet`, mutated in place). Once every track has come up, the cycle
+// resets so shuffling keeps going instead of running dry — but the track that
+// was just playing is excluded from that reset draw so it never repeats back
+// to back.
+function pickNextIndex(playedSet: Set<number>, total: number, avoid: number) {
+  let candidates = Array.from({ length: total }, (_, i) => i).filter((i) => !playedSet.has(i));
+  if (candidates.length === 0) {
+    playedSet.clear();
+    candidates = Array.from({ length: total }, (_, i) => i).filter((i) => i !== avoid);
+    if (candidates.length === 0) candidates = [avoid];
   }
-  return [keepFirst, ...rest];
+  return candidates[Math.floor(Math.random() * candidates.length)];
 }
 
 export function usePlaylistPlayer(tracks: Track[]) {
@@ -28,8 +34,16 @@ export function usePlaylistPlayer(tracks: Track[]) {
 
   const [ready, setReady] = useState(false);
   const [playing, setPlaying] = useState(false);
-  const [shuffle, setShuffle] = useState(false);
-  const [order, setOrder] = useState(() => tracks.map((_, i) => i));
+  const [shuffle, setShuffle] = useState(true);
+  // Never open on track 1 — pick a random starting point once per page load.
+  const [initialIndex] = useState(() => Math.floor(Math.random() * tracks.length));
+  // `order` is the session's playback history: it starts with just the
+  // opening track and grows one entry at a time as playback advances, rather
+  // than being a fixed precomputed permutation. `playedThisCycle` tracks
+  // which tracks have come up since the last reset, so random picks avoid
+  // repeats until the whole list has been through.
+  const [order, setOrder] = useState<number[]>(() => [initialIndex]);
+  const [playedThisCycle, setPlayedThisCycle] = useState<Set<number>>(() => new Set([initialIndex]));
   const [position, setPosition] = useState(0);
   const [progress, setProgress] = useState({ current: 0, duration: 0 });
 
@@ -49,7 +63,7 @@ export function usePlaylistPlayer(tracks: Track[]) {
       if (cancelled || !containerRef.current || playerRef.current) return;
 
       playerRef.current = new YTNamespace.Player(containerRef.current, {
-        videoId: tracks[0].youtubeId,
+        videoId: tracks[initialIndex].youtubeId,
         playerVars: PLAYER_VARS,
         events: {
           onReady: () => setReady(true),
@@ -90,10 +104,11 @@ export function usePlaylistPlayer(tracks: Track[]) {
   }, [playing]);
 
   const loadTrack = useCallback(
-    (nextPosition: number, autoplay: boolean) => {
+    (nextPosition: number, autoplay: boolean, explicitOrder?: number[]) => {
       const player = playerRef.current;
       if (!player) return;
-      const nextTrack = tracks[order[nextPosition]];
+      const activeOrder = explicitOrder ?? order;
+      const nextTrack = tracks[activeOrder[nextPosition]];
       setPosition(nextPosition);
       setProgress({ current: 0, duration: 0 });
       if (autoplay) player.loadVideoById(nextTrack.youtubeId);
@@ -104,11 +119,33 @@ export function usePlaylistPlayer(tracks: Track[]) {
 
   const advance = useCallback(
     (delta: 1 | -1) => {
-      const total = order.length;
-      const nextPosition = ((position + delta) % total + total) % total;
-      loadTrack(nextPosition, true);
+      if (!shuffle) {
+        const total = order.length;
+        const nextPosition = ((position + delta) % total + total) % total;
+        loadTrack(nextPosition, true);
+        return;
+      }
+
+      if (delta === -1) {
+        if (position === 0) return;
+        loadTrack(position - 1, true);
+        return;
+      }
+
+      if (position + 1 < order.length) {
+        loadTrack(position + 1, true);
+        return;
+      }
+
+      const playedSet = new Set(playedThisCycle);
+      const nextIndex = pickNextIndex(playedSet, tracks.length, order[position]);
+      playedSet.add(nextIndex);
+      setPlayedThisCycle(playedSet);
+      const nextOrder = [...order, nextIndex];
+      setOrder(nextOrder);
+      loadTrack(nextOrder.length - 1, true, nextOrder);
     },
-    [order, position, loadTrack],
+    [shuffle, order, position, playedThisCycle, tracks.length, loadTrack],
   );
 
   useEffect(() => {
@@ -127,26 +164,43 @@ export function usePlaylistPlayer(tracks: Track[]) {
       player.seekTo(0, true);
       return;
     }
+    if (shuffle && position === 0) {
+      player?.seekTo(0, true);
+      return;
+    }
     advance(-1);
-  }, [advance]);
+  }, [advance, shuffle, position]);
 
   const selectTrack = useCallback(
     (index: number) => {
-      const posInOrder = order.indexOf(index);
-      loadTrack(posInOrder === -1 ? 0 : posInOrder, true);
+      if (!shuffle) {
+        loadTrack(index, true);
+        return;
+      }
+      const playedSet = new Set(playedThisCycle);
+      playedSet.add(index);
+      setPlayedThisCycle(playedSet);
+      const nextOrder = [...order, index];
+      setOrder(nextOrder);
+      loadTrack(nextOrder.length - 1, true, nextOrder);
     },
-    [order, loadTrack],
+    [shuffle, order, playedThisCycle, loadTrack],
   );
 
   const toggleShuffle = useCallback(() => {
     setShuffle((current) => {
       const enabling = !current;
-      setOrder(enabling ? shuffledOrder(tracks.length, trackIndex) : tracks.map((_, i) => i));
-      setPosition(0);
+      if (enabling) {
+        setOrder([trackIndex]);
+        setPlayedThisCycle(new Set([trackIndex]));
+        setPosition(0);
+      } else {
+        setOrder(tracks.map((_, i) => i));
+        setPosition(trackIndex);
+      }
       return enabling;
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tracks.length, trackIndex]);
+  }, [tracks, trackIndex]);
 
   const seekToFraction = useCallback((fraction: number) => {
     const player = playerRef.current;

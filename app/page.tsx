@@ -1,6 +1,6 @@
 import { Background } from "@/components/background";
 import { Header } from "@/components/header";
-import { Player } from "@/components/player";
+import { Player } from "@/components/player-loader";
 
 export default function Home() {
   return (
