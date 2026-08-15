@@ -27,6 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${fraunces.variable} h-full antialiased overscroll-none`}
     >
+      <Analytics/>
       <body className="min-h-full flex flex-col bg-background text-foreground">{children}</body>
     </html>
   );
