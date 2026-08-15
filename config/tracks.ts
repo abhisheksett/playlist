@@ -422,7 +422,7 @@ export const tracks: Track[] = [
     album: "Saagar",
   },
   {
-    youtubeId: "z-vcE-UTc-0",
+    youtubeId: "p10gCB4Ugmc",
     title: "Yeh Haseen Wadiyan",
     artist: "S.P. Balasubrahmanyam, K.S. Chithra",
     album: "Roja",
@@ -470,7 +470,7 @@ export const tracks: Track[] = [
     album: "Silsila",
   },
   {
-    youtubeId: "2aKCKAD6rlQ",
+    youtubeId: "smBX9WxLJho",
     title: "Chhookar Mere Mann Ko",
     artist: "Kishore Kumar",
     album: "Yaarana",
