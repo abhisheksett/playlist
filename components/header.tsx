@@ -180,7 +180,7 @@ function LinkedInButton() {
       rel="noopener noreferrer"
       aria-label="Connect on LinkedIn"
       title="Connect on LinkedIn"
-      className="pointer-events-auto inline-flex items-center justify-center rounded-full border border-white/10 bg-black/30 p-2.5 text-white/80 shadow-lg backdrop-blur-xl transition hover:bg-white/10 hover:text-white"
+      className="pointer-events-auto inline-flex items-center justify-center rounded-full border border-white/10 bg-black/30 p-2.5 text-white/80 opacity-0 shadow-lg backdrop-blur-xl transition hover:bg-white/10 hover:text-white hover:opacity-100 focus-visible:opacity-100"
     >
       <LinkedInIcon />
     </a>
