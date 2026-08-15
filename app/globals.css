@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0c0806;
+  --foreground: #f3ead9;
+  --color-ember: #e8994a;
+  --color-rum: #4a2411;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ember: var(--color-ember);
+  --color-rum: var(--color-rum);
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-fraunces);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Rising smoke puffs above the ashtray in the hero photo — staggered so
+   the loop reads as organic drift rather than three copies in lockstep. */
+.smoke-puff {
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 60%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.15) 45%,
+    rgba(255, 255, 255, 0) 75%
+  );
+  filter: blur(6px);
+  opacity: 0;
+  animation: smoke-rise 7s ease-in infinite;
+}
+
+.smoke-puff-1 {
+  left: 12%;
+  animation-delay: 0s;
+}
+
+.smoke-puff-2 {
+  left: 40%;
+  width: 50%;
+  animation-delay: 2.3s;
+}
+
+.smoke-puff-3 {
+  left: 22%;
+  width: 45%;
+  animation-delay: 4.6s;
+}
+
+@keyframes smoke-rise {
+  0% {
+    transform: translate(0, 0) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(6%, -60%) scale(1.15);
+    opacity: 0.35;
+  }
+  100% {
+    transform: translate(-4%, -130%) scale(1.6);
+    opacity: 0;
+  }
+}
+
