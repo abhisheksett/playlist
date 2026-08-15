@@ -32,7 +32,7 @@ export const tracks: Track[] = [
     album: "Sharabi",
   },
   {
-    youtubeId: "x-qxMr_kHkU",
+    youtubeId: "_D7lzzD8l6M",
     title: "So Gaya Yeh Jahan",
     artist: "Nitin Mukesh, Shabbir Kumar, Alka Yagnik",
     album: "Tezaab",
