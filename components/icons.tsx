@@ -51,10 +51,12 @@ export function QueueIcon() {
 export function CheersIcon() {
   return (
     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M6.5 3h4l-.6 6.2a2.4 2.4 0 0 1-2.4 2.2 2.4 2.4 0 0 1-2.4-2.2L4.5 3Z" transform="rotate(-18 7 7)" />
-      <path d="M13.5 3h4l-.6 6.2a2.4 2.4 0 0 1-2.4 2.2 2.4 2.4 0 0 1-2.4-2.2L13.5 3Z" transform="rotate(18 17 7)" />
-      <path d="M7.5 11.4 6 20h4M16.5 11.4 18 20h-4" />
-      <path d="M4 21h6M14 21h6" />
+      <path d="M5 6h6l-1 11H6Z" transform="rotate(-14 8 11)" />
+      <path d="M5.4 11.2h5.2" transform="rotate(-14 8 11)" />
+      <path d="M19 6h-6l1 11h4Z" transform="rotate(14 16 11)" />
+      <path d="M13.4 11.2h5.2" transform="rotate(14 16 11)" />
+      <path d="M4 20h6M14 20h6" />
+      <path d="M10.8 4.2l1 1.4M13.2 4.2l-1 1.4" />
     </svg>
   );
 }
