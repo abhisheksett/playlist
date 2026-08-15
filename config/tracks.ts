@@ -38,6 +38,12 @@ export const tracks: Track[] = [
     album: "Tezaab",
   },
   {
+    youtubeId: "_w14bUcxl1c",
+    title: "O Mere Dil Ke Chain",
+    artist: "Kishore Kumar",
+    album: "Mere Jeevan Saathi",
+  },
+  {
     youtubeId: "N0jnLZxYwYc",
     title: "Mujhse Mohabbat Ka Izhaar Karta",
     artist: "Udit Narayan, Alka Yagnik",
