@@ -26,6 +26,18 @@ export const tracks: Track[] = [
     album: "Sharabi",
   },
   {
+    youtubeId: "nYXmSpgphpM",
+    title: "Intehaa ho gai intezaar ki",
+    artist: "Kishor Kumar, Asha Bhosle",
+    album: "Sharabi",
+  },
+  {
+    youtubeId: "x-qxMr_kHkU",
+    title: "So Gaya Yeh Jahan",
+    artist: "Nitin Mukesh, Shabbir Kumar, Alka Yagnik",
+    album: "Tezaab",
+  },
+  {
     youtubeId: "N0jnLZxYwYc",
     title: "Mujhse Mohabbat Ka Izhaar Karta",
     artist: "Udit Narayan, Alka Yagnik",
