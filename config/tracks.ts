@@ -499,10 +499,4 @@ export const tracks: Track[] = [
     artist: "Bhupinder Singh, Lata Mangeshkar",
     album: "Mausam",
   },
-  {
-    youtubeId: "zsMEoKjKHgY",
-    title: "Woh Pehli Baar",
-    artist: "Shaan, Vishal Dadlani, Shiraz, Samrat",
-    album: "Pyaar Mein Kabhi Kabhi",
-  },
 ];
