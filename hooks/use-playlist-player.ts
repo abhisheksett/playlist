@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { loadYouTubeIframeAPI } from "@/lib/youtube-api";
+import { useWakeLock } from "@/hooks/use-wake-lock";
 import type { Track } from "@/config/tracks";
 
 const PLAYER_VARS: YT.PlayerVars = {
@@ -46,6 +47,8 @@ export function usePlaylistPlayer(tracks: Track[]) {
   const [playedThisCycle, setPlayedThisCycle] = useState<Set<number>>(() => new Set([initialIndex]));
   const [position, setPosition] = useState(0);
   const [progress, setProgress] = useState({ current: 0, duration: 0 });
+
+  useWakeLock(playing);
 
   const trackIndex = order[position];
   const track = tracks[trackIndex];
