@@ -5,15 +5,17 @@
 export function Background() {
   return (
     <>
-      {/* Portrait crop below sm, landscape crop at sm and up. */}
+      {/* Portrait image below sm, landscape image at sm and up — shown in
+          full via bg-contain so the exact photo is never cropped; any
+          letterboxing falls back to the page's dark background color. */}
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-0 -z-30 bg-cover bg-center bg-no-repeat sm:hidden"
+        className="pointer-events-none fixed inset-0 -z-30 bg-contain bg-center bg-no-repeat sm:hidden"
         style={{ backgroundImage: "url(/hero-mobile.png)" }}
       />
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-0 -z-30 hidden bg-cover bg-center bg-no-repeat sm:block"
+        className="pointer-events-none fixed inset-0 -z-30 hidden bg-contain bg-center bg-no-repeat sm:block"
         style={{ backgroundImage: "url(/hero.png)" }}
       />
 
