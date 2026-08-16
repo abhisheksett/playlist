@@ -44,6 +44,12 @@ export const tracks: Track[] = [
     album: "Mere Jeevan Saathi",
   },
   {
+    youtubeId: "xP2OcqFcKSY",
+    title: "Yeh Shaam Mastani",
+    artist: "Kishore Kumar",
+    album: "Kati Patang",
+  },
+  {
     youtubeId: "N0jnLZxYwYc",
     title: "Mujhse Mohabbat Ka Izhaar Karta",
     artist: "Udit Narayan, Alka Yagnik",
