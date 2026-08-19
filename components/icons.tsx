@@ -81,6 +81,16 @@ export function LinkedInIcon() {
   );
 }
 
+export function BookIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M12 6.5c-1.4-1-3.4-1.5-5.5-1.5S3 5.5 3 5.5v13S4.9 18 6.5 18s4.1.5 5.5 1.5" />
+      <path d="M12 6.5c1.4-1 3.4-1.5 5.5-1.5S21 5.5 21 5.5v13S19.1 18 17.5 18s-4.1.5-5.5 1.5Z" />
+      <path d="M12 6.5v13" />
+    </svg>
+  );
+}
+
 export function CloseIcon() {
   return (
     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>

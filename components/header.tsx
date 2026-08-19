@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { CheersIcon, LinkedInIcon, RainIcon } from "@/components/icons";
+import { BookIcon, CheersIcon, CloseIcon, LinkedInIcon, RainIcon } from "@/components/icons";
 
 function Clock() {
   const [time, setTime] = useState<string | null>(null);
@@ -172,6 +172,69 @@ function CheersButton() {
   );
 }
 
+function StoryButton({ onClick }: { onClick: () => void }) {
+  return (
+    <button
+      onClick={onClick}
+      aria-label="Read the story behind this playlist"
+      title="The story"
+      className="pointer-events-auto inline-flex items-center justify-center rounded-full border border-white/10 bg-black/30 p-2.5 text-white/80 shadow-lg backdrop-blur-xl transition hover:bg-white/10 hover:text-white"
+    >
+      <BookIcon />
+    </button>
+  );
+}
+
+function StoryOverlay({ onClose }: { onClose: () => void }) {
+  return (
+    <div
+      className="pointer-events-auto fixed inset-0 z-40 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div
+        onClick={(event) => event.stopPropagation()}
+        className="max-h-[80dvh] w-full max-w-md overflow-y-auto rounded-3xl border border-white/10 bg-black/60 p-6 shadow-2xl backdrop-blur-xl"
+      >
+        <div className="mb-4 flex items-center justify-between">
+          <p className="font-display text-sm italic text-white/80">The story</p>
+          <button
+            onClick={onClose}
+            aria-label="Close"
+            className="rounded-full p-1 text-white/50 transition hover:bg-white/10 hover:text-white"
+          >
+            <CloseIcon />
+          </button>
+        </div>
+        <div className="space-y-4 text-left">
+          <p className="font-display text-base italic leading-relaxed text-white/80">
+            Imagine you and your close friends meeting after a long while, over Old Monk.
+            It&apos;s drizzling outside, cozy inside the room. Someone&apos;s cracked open the
+            bottle, someone&apos;s still figuring out the mixer-to-rum ratio, and nobody&apos;s in
+            a hurry to go anywhere.
+          </p>
+          <p className="text-sm leading-relaxed text-white/60">
+            The conversation drifts the way it always does — who&apos;s doing what now, who still
+            owes whom money from a trip nobody quite remembers properly, the usual roasting that
+            never gets old. Somewhere between the second peg and the third, someone reaches for
+            the aux, and it has to be <em>those</em> songs. Not the new ones. The ones that were
+            playing in the background of every hostel room, every terrace, every long train ride
+            back then.
+          </p>
+          <p className="text-sm leading-relaxed text-white/60">
+            The happy ones. The heartbreak ones. Back to back, no skipping, no arguing about
+            what&apos;s next — because you already know every line, and so does everyone else in
+            the room.
+          </p>
+          <p className="font-display text-base italic text-ember">
+            That&apos;s this playlist. Old is gold, on repeat, for exactly this kind of night.
+          </p>
+          <p className="text-sm text-white/50">Pour one, and hit play.</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function LinkedInButton() {
   return (
     <a
@@ -188,6 +251,8 @@ function LinkedInButton() {
 }
 
 export function Header() {
+  const [storyOpen, setStoryOpen] = useState(false);
+
   return (
     <div className="pointer-events-none fixed inset-x-0 top-0 z-20">
       <div className="fixed left-5 top-5 sm:left-8 sm:top-7">
@@ -200,9 +265,11 @@ export function Header() {
         <AmbientButton />
         <CheersButton />
       </div>
-      <div className="fixed bottom-5 right-5 sm:bottom-7 sm:right-8">
+      <div className="fixed bottom-44 right-5 flex flex-col items-center gap-2 sm:bottom-7 sm:right-8">
+        <StoryButton onClick={() => setStoryOpen(true)} />
         <LinkedInButton />
       </div>
+      {storyOpen && <StoryOverlay onClose={() => setStoryOpen(false)} />}
     </div>
   );
 }

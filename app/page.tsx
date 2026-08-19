@@ -1,12 +1,14 @@
 import { Background } from "@/components/background";
 import { Header } from "@/components/header";
 import { Player } from "@/components/player-loader";
+// import { StoryTicker } from "@/components/story-ticker";
 
 export default function Home() {
   return (
     <main className="relative flex min-h-dvh flex-1 flex-col items-center justify-between overflow-hidden">
       <Background />
       <Header />
+      {/* <StoryTicker /> */}
 
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center gap-3 px-4 text-center">
         <div className="h-px w-20 bg-linear-to-r from-transparent via-ember/80 to-transparent sm:w-28" />

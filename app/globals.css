@@ -59,6 +59,46 @@ body {
   animation-delay: 4.6s;
 }
 
+/* Slow, seamless vertical crawl for the story column pinned to the left
+   edge. The track holds two copies of the paragraph list stacked
+   back-to-back, so translating by exactly -50% loops without a visible seam. */
+.story-ticker-mask {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+}
+
+.story-ticker-track {
+  animation: story-ticker-scroll 150s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-ticker-track {
+    animation: none;
+    transform: translateY(0);
+  }
+}
+
+@keyframes story-ticker-scroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
 @keyframes smoke-rise {
   0% {
     transform: translate(0, 0) scale(0.6);
