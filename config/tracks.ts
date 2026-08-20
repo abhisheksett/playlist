@@ -643,4 +643,34 @@ export const tracks: Track[] = [
     artist: "Lata Mangeshkar",
     album: "Anupama",
   },
+  {
+    youtubeId: "HB3C1MJZI24",
+    title: "Mera Jeevan Kora Kagaz",
+    artist: "Kishore Kumar",
+    album: "Kora Kagaz",
+  },
+  {
+    youtubeId: "KxmBSA_tr5Y",
+    title: "Guzra Hua Zamana",
+    artist: "Lata Mangeshkar",
+    album: "Shirin Farhad",
+  },
+  {
+    youtubeId: "HapbX5yPV48",
+    title: "Kabhi Khud Pe Kabhi Halaat Pe",
+    artist: "Mohammed Rafi",
+    album: "Hum Dono",
+  },
+  {
+    youtubeId: "b1r5pz0odow",
+    title: "Din Dhal Jaye",
+    artist: "Mohammed Rafi",
+    album: "Guide",
+  },
+  {
+    youtubeId: "QwLQ4_gkvsE",
+    title: "Pal Pal Dil Ke Paas",
+    artist: "Kishore Kumar",
+    album: "Blackmail",
+  },
 ];
