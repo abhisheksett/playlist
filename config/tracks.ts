@@ -595,4 +595,52 @@ export const tracks: Track[] = [
     artist: "Kishore Kumar, Lata Mangeshkar",
     album: "Ghar",
   },
+  {
+    youtubeId: "_mZ0VuqRh2c",
+    title: "Ajeeb Dastan Hai Yeh",
+    artist: "Lata Mangeshkar",
+    album: "Dil Apna Aur Preet Parai",
+  },
+  {
+    youtubeId: "w0AkZQUokog",
+    title: "Kahin Door Jab Din Dhal Jaaye",
+    artist: "Mukesh",
+    album: "Anand",
+  },
+  {
+    youtubeId: "MpQ-2MU9xJw",
+    title: "Zindagi Kaisi Hai Paheli",
+    artist: "Manna Dey",
+    album: "Anand",
+  },
+  {
+    youtubeId: "7WWC15KERSg",
+    title: "Yeh Kya Hua",
+    artist: "Kishore Kumar",
+    album: "Amar Prem",
+  },
+  {
+    youtubeId: "BSOJtS1GBcU",
+    title: "Chalte Chalte Yun Hi Koi",
+    artist: "Lata Mangeshkar",
+    album: "Pakeezah",
+  },
+  {
+    youtubeId: "0RFvKAHgbfg",
+    title: "Aaj Socha Toh Aansoo Bhar Aaye",
+    artist: "Lata Mangeshkar",
+    album: "Hanste Zakhm",
+  },
+  {
+    youtubeId: "Z9tZU5MSvBQ",
+    title: "Neela Aasman So Gaya",
+    artist: "Kishore Kumar",
+    album: "Silsila",
+  },
+  {
+    youtubeId: "69dnqIFfrnE",
+    title: "Kuchh Dil Ne Kaha",
+    artist: "Lata Mangeshkar",
+    album: "Anupama",
+  },
 ];
