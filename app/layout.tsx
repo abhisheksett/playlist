@@ -16,18 +16,19 @@ const fraunces = Fraunces({
 });
 
 const description =
-  "The Old Monk playlist — an 80s & 90s Bollywood playlist for daaru nights with friends. Old is gold Hindi songs, the happy ones and the heartbreak ones, back to back.";
+  "The Old Monk playlist - an 80s & 90s Bollywood playlist for daaru nights with friends. Old is gold Hindi songs, the happy ones and the heartbreak ones, back to back.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://oldmonk.vercel.app"),
   title: {
-    default: "Old Monk — 80s & 90s Bollywood Playlist",
+    default: "Old Monk - 80s & 90s Bollywood Playlist",
     template: "%s | Old Monk",
   },
   description,
   keywords: [
     "old monk playlist",
     "daaru playlist",
+    "daru playlist",
     "80s bollywood songs",
     "90s bollywood songs",
     "hindi gaane playlist",
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     "sad old hindi songs",
   ],
   openGraph: {
-    title: "Old Monk — 80s & 90s Bollywood Playlist",
+    title: "Old Monk - 80s & 90s Bollywood Playlist",
     description,
     url: "/",
     siteName: "Old Monk",
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Old Monk — 80s & 90s Bollywood Playlist",
+    title: "Old Monk - 80s & 90s Bollywood Playlist",
     description,
   },
   robots: {
