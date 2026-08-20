@@ -80,10 +80,10 @@ export const tracks: Track[] = [
     album: "Dilwale",
   },
   {
-    youtubeId: "i1IsLVz6T9Q",
-    title: "Dard Karaara",
+    youtubeId: "xvevXfFGPFY",
+    title: "Teri Umeed Tera Intezar",
     artist: "Kumar Sanu, Sadhana Sargam",
-    album: "Dum Laga Ke Haisha",
+    album: "Deewana",
   },
   {
     youtubeId: "5y_TCKNzAMI",
