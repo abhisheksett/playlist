@@ -553,4 +553,46 @@ export const tracks: Track[] = [
     artist: "Kishore Kumar",
     album: "Ghar",
   },
+  {
+    youtubeId: "I2i1BEA21h4",
+    title: "Rahein Na Rahein Hum",
+    artist: "Lata Mangeshkar",
+    album: "Mamta",
+  },
+  {
+    youtubeId: "OlvXDGJAMT0",
+    title: "Mera Kuch Saamaan",
+    artist: "Asha Bhosle",
+    album: "Ijaazat",
+  },
+  {
+    youtubeId: "87DchBGxqV8",
+    title: "Kabhi Kabhie Mere Dil Mein",
+    artist: "Mukesh, Lata Mangeshkar",
+    album: "Kabhi Kabhie",
+  },
+  {
+    youtubeId: "89lgb7dmXps",
+    title: "Tera Mujhse Hai Pehle Ka Naata Koi",
+    artist: "Kishore Kumar",
+    album: "Aa Gale Lag Jaa",
+  },
+  {
+    youtubeId: "76XdhSyZcEo",
+    title: "Chalte Chalte",
+    artist: "Kishore Kumar",
+    album: "Chalte Chalte",
+  },
+  {
+    youtubeId: "DbD06TA6DGY",
+    title: "Tum Bin Jaaoon Kahan",
+    artist: "Kishore Kumar",
+    album: "Pyar Ka Mausam",
+  },
+  {
+    youtubeId: "qn3WEdLtp-g",
+    title: "Aap Ki Aankhon Mein Kuchh",
+    artist: "Kishore Kumar, Lata Mangeshkar",
+    album: "Ghar",
+  },
 ];
